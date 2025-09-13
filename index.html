@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dokument & Signering</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Forhåndsvisning av dokument</h1>
+      <div class="sub">Bla til bunnen, signer i feltet og trykk Send.</div>
+      <div class="progress" aria-hidden="true"><div class="bar" id="bar"></div></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="pdfWrap" class="pdfWrap" aria-label="PDF-dokument">
+      <iframe id="pdfFrame" class="pdfFrame" title="PDF forhåndsvisning" src="" loading="eager"></iframe>
+    </section>
+
+    <section id="signPanel" class="sigCard" aria-label="Signaturfelt">
+      <div class="sigHead">
+        <div class="sigTitle">Signatur</div>
+        <div id="status" class="meta">Klar for signering</div>
+      </div>
+      <div class="sigBody">
+        <div class="row" style="margin-bottom:8px">
+          <input id="fullName" type="text" placeholder="Navn (valgfritt)" autocomplete="name" />
+          <div class="meta">Signér med finger/mus i feltet under.</div>
+        </div>
+        <div id="sigWrap" class="sigCanvasWrap">
+          <canvas id="sig"></canvas>
+        </div>
+        <div class="controls">
+          <button id="clearBtn" type="button">Tøm</button>
+          <button id="sendBtn" class="primary" type="button" disabled>Send</button>
+          <button id="downloadBtn" type="button">Last ned PNG</button>
+        </div>
+        <div class="meta">Ved sending sendes kun signaturbildet (PNG), tidsstempel, dokument-URL og navn (hvis fylt) til ditt endepunkt.</div>
+      </div>
+    </section>
+
+    <div class="footerSpace" aria-hidden="true"></div>
+  </main>
+
+  <div id="hint" class="hintFloat" role="button" aria-label="Gå til signaturfelt">
+    <div class="dot"></div><span>Signer nederst</span>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
