@@ -1,7 +1,7 @@
 // --- KONFIGURASJON ---
 // Legg PDF i /public/document.pdf i Vercel-prosjektet, eller endre URL her.
 const PDF_URL  = "document.pdf";   // relativ til domenet/prosjektet
-const ENDPOINT = "/api/signature";  // ditt POST-endepunkt
+const ENDPOINT = "public_html/api";  // ditt POST-endepunkt
 // ---------------------
 
 // Elementer
@@ -173,3 +173,4 @@ sendBtn.addEventListener('click', async ()=>{
 fullName.addEventListener('keydown', (e)=>{
   if(e.key === 'Enter' && !sendBtn.disabled) sendBtn.click();
 });
+
